@@ -8,11 +8,10 @@
     <link rel="stylesheet" href="screen.css">
   </head>
   <body>
-    <h1>Home</h1>
     <nav>
-      <svg src="images/back.svg" alt="Go Previous Page"></svg>
+      <svg class="back" src="images/back.svg" alt="Go Previous Page"></svg>
       <h1>Playlist Name</h1>
-      <svg src="images/viewMore.svg" alt="View More Options"></svg>
+      <svg class="options" src="images/viewMore.svg" alt="View More Options"></svg>
     </nav>
     <section class="playlists">
       <div class="song-tile">
@@ -50,7 +49,9 @@
           <p>Album Name 1</p>
         </div>
       </div>
-      <p>5 songs / 25 minutes</p>
+      <div class="playlist-info">
+        <p>5 songs / 25 minutes</p>
+      </div>
     </section>
     <script src="index.js"></script>
   </body>
