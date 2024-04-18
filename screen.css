@@ -11,12 +11,14 @@ body {
 
 nav {
     display: flex;
-    width: 320px;
+    width: 300px;
     padding: 10px;
     justify-content: space-between;
     align-items: center;
     background: #E6E6E6;
 }
+
+/* Index */
 
 .playlists {
     display: inline-flex;
@@ -101,4 +103,128 @@ svg.options {
     width: 17.468px;
     height: 5px;
     flex-shrink: 0;
+}
+
+/* Player */
+
+.cover {
+    display: flex;
+    width: 288px;
+    height: 262px;
+    padding: 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.album-play {
+    width: 208px;
+    height: 208px;
+    flex-shrink: 0;
+}
+
+.album-pause {
+    width: 158px;
+    height: 158px;
+    flex-shrink: 0;
+}
+
+.name {
+    display: flex;
+    width: 288px;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress {
+    width: 288px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.bar {
+    width: 288px;
+    height: 8px;
+    border-radius: 10px;
+    background: #D9D9D9;
+}
+
+.indicator {
+    width: 24px;
+    height: 24px;
+    fill: #000000;
+    stroke-width: 4px;
+    stroke: #FFFFFF;
+}
+
+.time {
+    flex: 1 0 0;
+}
+
+.controls {
+    display: inline-flex;
+    padding: 24px 33px;
+    align-items: center;
+    gap: 64px;
+}
+
+.previous {
+    width: 47px;
+    height: 30.795px;
+}
+
+.play {
+    width: 32px;
+    height: 40.558px;
+}
+
+.pause {
+    width: 32px;
+    height: 40.56px;
+}
+
+.forward {
+    width: 47px;
+    height: 30.795px;
+}
+
+.volume {
+    display: inline-flex;
+    padding: 24px 33px;
+    align-items: center;
+    gap: 64px;
+}
+
+.low {
+    width: 47px;
+    height: 30.795px;
+}
+
+.progress2 {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.bar2 {
+    height: 8px;
+    align-self: stretch;
+    border-radius: 10px;
+    background: #D9D9D9;
+}
+
+.indicator2 {
+    width: 24px;
+    height: 24px;
+    fill: #000000;
+    stroke-width: 4px;
+    stroke: #FFFFFF;
+}
+
+.high {
+    width: 19.113px;
+    height: 12px;
 }

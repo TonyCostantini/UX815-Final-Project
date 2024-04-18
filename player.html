@@ -9,28 +9,28 @@
   </head>
   <body>
     <nav>
-      <svg src="images/back.svg" alt="Go Previous Page"></svg>
+      <svg class="back" src="images/back.svg" alt="Go Previous Page"></svg>
       <h1>Playlist Name</h1>
-      <svg src="images/viewMore.svg" alt="View More Options"></svg>
+      <svg class="options" src="images/viewMore.svg" alt="View More Options"></svg>
     </nav>
 
-    <section class="Cover">
-      <div class="Album">
-        <div class="Album-Play"></div>
+    <section class="cover">
+      <div class="album-play">
+        <div class="album-pause"></div>
       </div>
     </section>
 
-    <section class="SongNameAlbum">
+    <section class="name">
       <h3>Song Name</h3>
       <h4>Album</h4>
     </section>
 
-    <section class="ProgressBar">
-      <div class="PropertyProgress">
-        <svg class="bar" src="images/bar.svg" alt="Progress Bar"></svg>
+    <section class="progress">
+      <div class="bar">
+        <svg src="images/bar.svg" alt="Progress Bar"></svg>
       </div>
-      <div class="PropertyProgress">
-        <svg class="Indicator" src="images/indicator.svg" alt="Indicator"></svg>
+      <div class="indicator">
+        <svg src="images/indicator.svg" alt="Indicator"></svg>
       </div>
     </section>
 
@@ -38,33 +38,32 @@
       <p>0:00 / 0:00</p>
     </section>
 
-    <section class="ControlButtons">
-      <div class="Previous">
+    <section class="controls">
+      <div class="previous">
         <svg src="images/previous.svg" alt="Previous"></svg>
       </div>
-      <div class="Play">
+      <div class="play">
         <svg src="images/play.svg" alt="Play"></svg>
+        <div class="pause">
+          <svg src="images/pause.svg" alt="Pause"></svg>
+        </div>
       </div>
-      <div class="Forward">
+      <div class="forward">
         <svg src="images/forward.svg" alt="Forward"></svg>
       </div>
     </section>
 
-    <section class="Volume-Controls">
-      <div class="Volume">
-        <svg class="Volume-Low" src="images/low.svg" alt="Volume Low"></svg>
-      </div>
-      <div class="ProgressBar">
-          <div class="PropertyProgress">
-            <svg class="bar" src="images/bar.svg" alt="Progress Bar"></svg>
+    <section class="volume">
+      <svg class="low" src="images/low.svg" alt="Volume Low"></svg>
+      <div class="progress2">
+          <div class="bar2">
+            <svg src="images/bar.svg" alt="Progress Bar"></svg>
           </div>
-          <div class="PropertyProgress">
-            <svg class="Indicator" src="images/indicator.svg" alt="Indicator"></svg>
+          <div class="indicator2">
+            <svg src="images/indicator.svg" alt="Indicator"></svg>
           </div>
       </div>
-      <div class="Volume">
-        <svg class="Volume-High" src="images/high.svg" alt="Volume High"></svg>
-      </div>
+      <svg class="high" src="images/high.svg" alt="Volume High"></svg>
     </section>
     
     <script src="index.js"></script>
