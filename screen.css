@@ -122,27 +122,32 @@ svg.options {
     width: 208px;
     height: 208px;
     flex-shrink: 0;
+    background-color: #D9D9D9;
+    border-radius: 10px;
 }
 
 .album-pause {
     width: 158px;
     height: 158px;
     flex-shrink: 0;
+    background-color: #D9D9D9;
+    border-radius: 10px;
 }
 
 .name {
     display: flex;
+    flex-direction: column;
     width: 288px;
     padding: 8px 16px;
     justify-content: center;
     align-items: center;
-    gap: 10px;
 }
 
 .progress {
+    display: flex;
     width: 288px;
     height: 24px;
-    flex-shrink: 0;
+    align-items: center;
 }
 
 .bar {
@@ -161,7 +166,7 @@ svg.options {
 }
 
 .time {
-    flex: 1 0 0;
+    margin: 0 auto;
 }
 
 .controls {
@@ -192,10 +197,10 @@ svg.options {
 }
 
 .volume {
+    width: 288px;
     display: inline-flex;
     padding: 24px 33px;
     align-items: center;
-    gap: 64px;
 }
 
 .low {
@@ -210,6 +215,7 @@ svg.options {
 }
 
 .bar2 {
+    width: 240px;
     height: 8px;
     align-self: stretch;
     border-radius: 10px;
@@ -227,4 +233,34 @@ svg.options {
 .high {
     width: 19.113px;
     height: 12px;
+}
+
+h3 {
+    margin: 0;
+    color: #000000;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+h4 {
+    margin: 0;
+    color: #000000;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+h5 {
+    margin: 0;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #000000;
+    text-align: center;
 }
