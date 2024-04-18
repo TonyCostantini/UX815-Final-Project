@@ -70,6 +70,12 @@ h2 {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    text-decoration: none;
+    color: #000000;
+}
+
+h2 a {
+    text-decoration: none !important;
 }
 
 p {
@@ -78,6 +84,11 @@ p {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    color: #000000;
+}
+
+p a {
+    text-decoration: none !important;
 }
 
 svg.back {
