@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>About Page</title>
     <link rel="stylesheet" href="screen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
   </head>
   <body>
     <nav>
@@ -39,31 +40,17 @@
     </section>
 
     <section class="controls">
-      <div class="previous">
-        <svg src="images/previous.svg" alt="Previous"></svg>
-      </div>
-      <div class="play">
-        <svg src="images/play.svg" alt="Play"></svg>
-        <div class="pause">
-          <svg src="images/pause.svg" alt="Pause"></svg>
-        </div>
-      </div>
-      <div class="forward">
-        <svg src="images/forward.svg" alt="Forward"></svg>
-      </div>
+      <button id="play">▶</button>
+      <button id="pause">⏸</button>
+      <button id="stop">⏹</button>
     </section>
 
-    <section class="volume">
-      <svg class="low" src="images/low.svg" alt="Volume Low"></svg>
-      <div class="progress2">
-          <div class="bar2">
-            <svg src="images/bar.svg" alt="Progress Bar"></svg>
-          </div>
-          <div class="indicator2">
-            <svg src="images/indicator.svg" alt="Indicator"></svg>
-          </div>
-      </div>
-      <svg class="high" src="images/high.svg" alt="Volume High"></svg>
+    <section class="music-player">
+      <audio id="player" controls>
+        <source src="audio.mp3" type="audio/mpeg">
+      </audio>
+      <progress id="progressBar" value="0" max="100"></progress>
+      <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
     </section>
     
     <script src="index.js"></script>

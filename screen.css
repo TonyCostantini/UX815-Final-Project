@@ -264,3 +264,18 @@ h5 {
     color: #000000;
     text-align: center;
 }
+
+.music-player {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#volumeSlider {
+    width: 200px;
+    margin-top: 10px;
+}
+
+#progressBar {
+    width: 80%;
+    margin-top: 10px;
+}
