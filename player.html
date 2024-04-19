@@ -26,14 +26,7 @@
       <h4>Album</h4>
     </section>
 
-    <section class="progress">
-      <div class="bar">
-        <svg src="images/bar.svg" alt="Progress Bar"></svg>
-      </div>
-      <div class="indicator">
-        <svg src="images/indicator.svg" alt="Indicator"></svg>
-      </div>
-    </section>
+    <progress id="progressBar" value="0" max="100"></progress>
 
     <section class="time">
       <h5>0:00 / 0:00</h5>
@@ -46,10 +39,9 @@
     </section>
 
     <section class="music-player">
-      <audio id="player" controls>
+      <audio id="player">
         <source src="audio.mp3" type="audio/mpeg">
       </audio>
-      <progress id="progressBar" value="0" max="100"></progress>
       <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
     </section>
     
