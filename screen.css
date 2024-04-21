@@ -21,6 +21,7 @@ nav {
 /* Index */
 
 .playlists {
+    width: 300px;
     display: inline-flex;
     padding: 10px;
     flex-direction: column;
@@ -31,13 +32,34 @@ nav {
 
 .song-tile {
     display: flex;
-    width: 300px;
+    width: 280px;
     height: 74px;
     padding: 10px;
     align-items: center;
     gap: 10px;
     border-radius: 10px;
     background: #F9F9F9;
+}
+
+.playlist-image1 {
+    width: 54px;
+    height: 54px;
+    border-radius: 4px;
+    
+}
+
+.playlist-image2 {
+    width: 54px;
+    height: 54px;
+    border-radius: 4px;
+    
+}
+
+.playlist-image3 {
+    width: 54px;
+    height: 54px;
+    border-radius: 4px;
+    
 }
 
 .description {
@@ -51,11 +73,9 @@ nav {
 
 .playlist-info {
     display: flex;
-    width: 288px;
-    padding: 4px 16px;
+    width: 292px;
+    padding: 180px 4px 4px 4px;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
 }
 
 h1 {
@@ -93,13 +113,13 @@ p a {
     text-decoration: none !important;
 }
 
-svg.back {
+img.back {
     width: 12.053px;
     height: 15px;
     flex-shrink: 0;
 }
 
-svg.options {
+img.options {
     width: 17.468px;
     height: 5px;
     flex-shrink: 0;
@@ -107,10 +127,14 @@ svg.options {
 
 /* Player */
 
+.container {
+    background-color: #F6F6F6;
+}
+
 .cover {
     display: flex;
     width: 288px;
-    height: 262px;
+    height: 208px;
     padding: 16px;
     justify-content: center;
     align-items: center;
@@ -118,7 +142,7 @@ svg.options {
     flex-shrink: 0;
 }
 
-.album-play {
+#albumCover {
     width: 208px;
     height: 208px;
     flex-shrink: 0;
@@ -126,15 +150,7 @@ svg.options {
     border-radius: 10px;
 }
 
-.album-pause {
-    width: 158px;
-    height: 158px;
-    flex-shrink: 0;
-    background-color: #D9D9D9;
-    border-radius: 10px;
-}
-
-.name {
+.song-info {
     display: flex;
     flex-direction: column;
     width: 288px;
@@ -143,57 +159,65 @@ svg.options {
     align-items: center;
 }
 
-.progress {
+progress {
+    margin: 0 auto;
+    justify-content: center;
+}
+
+#progressBar {
     display: flex;
     width: 288px;
-    height: 24px;
-    align-items: center;
-}
-
-.bar {
-    width: 288px;
-    height: 8px;
-    border-radius: 10px;
-    background: #D9D9D9;
-}
-
-.indicator {
-    width: 24px;
-    height: 24px;
-    fill: #000000;
-    stroke-width: 4px;
-    stroke: #FFFFFF;
-}
-
-.time {
-    margin: 0 auto;
+    height: 16px;
+    margin-bottom: 8px;
 }
 
 .controls {
-    display: inline-flex;
-    padding: 24px 33px;
+    display: flex;
     align-items: center;
-    gap: 64px;
+    justify-content: center;
+    gap: 56px;
+    padding: 16px 0;
 }
 
-.previous {
-    width: 47px;
-    height: 30.795px;
+#previous {
+    font-size: 36px;
+    background-color: #F9F9F9;
+    border: 0;
 }
 
-.play {
-    width: 32px;
-    height: 40.558px;
+#play {
+    font-size: 48px;
+    background-color: #F9F9F9;
+    border: 0;
 }
 
-.pause {
+#next {
+    font-size: 36px;
+    background-color: #F9F9F9;
+    border: 0;
+}
+
+.secondary-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 56px;
+}
+
+#stop {
+    font-size: 36px;
+    background-color: #F9F9F9;
+    border: 0;
     width: 32px;
     height: 40.56px;
 }
 
-.forward {
-    width: 47px;
-    height: 30.795px;
+#pause {
+    font-size: 36px;
+    background-color: #F9F9F9;
+    border: 0;
+    width: 32px;
+    height: 40.56px;
 }
 
 .volume {
@@ -201,38 +225,6 @@ svg.options {
     display: inline-flex;
     padding: 24px 33px;
     align-items: center;
-}
-
-.low {
-    width: 47px;
-    height: 30.795px;
-}
-
-.progress2 {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-}
-
-.bar2 {
-    width: 240px;
-    height: 8px;
-    align-self: stretch;
-    border-radius: 10px;
-    background: #D9D9D9;
-}
-
-.indicator2 {
-    width: 24px;
-    height: 24px;
-    fill: #000000;
-    stroke-width: 4px;
-    stroke: #FFFFFF;
-}
-
-.high {
-    width: 19.113px;
-    height: 12px;
 }
 
 h3 {
@@ -266,7 +258,8 @@ h5 {
 }
 
 .music-player {
-    margin-top: 20px;
+    margin-top: 8px;
+    padding-bottom: 13px;
     text-align: center;
 }
 

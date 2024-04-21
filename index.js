@@ -1,4 +1,4 @@
-// Define your playlist
+/// Define your playlist
 const playlist = [
     'solitude-dark-ambient-electronic_lucafrancini.mp3',
     'better-day_penguinmusic.mp3',
@@ -10,7 +10,7 @@ let player;
 // Function to initialize the player with the current song
 function initializePlayer() {
     player = new Howl({
-        src: [playlist[currentIndex]],
+        src: ['music/' + playlist[currentIndex]], // Update the path to music files
         html5: true, // Use HTML5 audio
         onend: function() {
             next(); // Automatically play next song when the current one ends
@@ -23,7 +23,9 @@ function play() {
     if (!player) {
         initializePlayer();
     }
-    player.play();
+    if (!player.playing()) { // Check if the player is not already playing
+        player.play();
+    }
 }
 
 // Function to pause the current song
@@ -94,28 +96,17 @@ function updateProgressBar() {
 // Update the progress bar continuously
 setInterval(updateProgressBar, 1000);
 
-// Stop updating the progress bar when the song is paused or stopped
-player.on('pause', function() {
-    clearInterval(progressUpdateTimer);
-});
-player.on('stop', function() {
-    clearInterval(progressUpdateTimer);
-});
-
 // Function to update the progress timer text
 function updateProgressTimer() {
     if (player && player.playing()) {
-        var currentTime = formatTime(player.seek());
-        var totalTime = formatTime(player.duration());
-        document.getElementById('progressTimer').innerText = currentTime + ' / ' + totalTime;
+        document.getElementById('ProgressTimer').innerText = currentTime + ' / ' + totalTime;
     }
 }
-
 function updateProgressBar() {
     var progress = (player.seek() / player.duration()) * 100;
     progressBar.value = progress;
 
-// Function to format time in MM:SS format
+    // Function to format time in MM:SS format
 function formatTime(timeInSeconds) {
     var minutes = Math.floor(timeInSeconds / 60);
     var seconds = Math.floor(timeInSeconds % 60);
@@ -134,4 +125,25 @@ setInterval(updateProgressTimer, 1000);
 var currentTime = formatTime(player.seek());
 var duration = formatTime(player.duration());
 progressTimer.textContent = currentTime + " / " + duration;
+}
+
+// Event listener to update the song info when a new song starts playing
+player.on('play', function() {
+    updateSongInfo();
+});
+
+// New approach for dynamically loading song details
+// Song titles
+const songs = ['Solitude Dark Ambient Electronic', 'Drive Breakbeat', 'Better Day'];
+
+// Keep track of song
+let songIndex = 2;
+
+// Initially load song details
+loadSong(songs[songIndex]);
+
+// Update song details
+function loadSong(song) {
+  document.getElementById('songName').innerText = song; // Update the song name in the HTML
+  document.getElementById('albumCover').src = 'images/' + song + '.jpg'; // Update the album cover image source
 }
