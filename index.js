@@ -1,19 +1,20 @@
-/// Define your playlist
-const playlist = [
-    'solitude-dark-ambient-electronic_lucafrancini.mp3',
-    'better-day_penguinmusic.mp3',
-    'drive-breakbeat_rockot.mp3'
-];
 let currentIndex = 0;
 let player;
+
+// Define your playlist
+const playlist = [
+    'Solitude.mp3',
+    'Better Day.mp3',
+    'Drive Breakbeat.mp3'
+];
 
 // Function to initialize the player with the current song
 function initializePlayer() {
     player = new Howl({
         src: ['music/' + playlist[currentIndex]], // Update the path to music files
-        html5: true, // Use HTML5 audio
+        html5: true,
         onend: function() {
-            next(); // Automatically play next song when the current one ends
+            next(); 
         }
     });
 }
@@ -23,7 +24,7 @@ function play() {
     if (!player) {
         initializePlayer();
     }
-    if (!player.playing()) { // Check if the player is not already playing
+    if (!player.playing()) {
         player.play();
     }
 }
@@ -127,23 +128,20 @@ var duration = formatTime(player.duration());
 progressTimer.textContent = currentTime + " / " + duration;
 }
 
-// Event listener to update the song info when a new song starts playing
-player.on('play', function() {
-    updateSongInfo();
-});
+// Access metadata
+const audioElement = document.getElementById('audioPlayer');
+const metadata = audioElement && audioElement.querySelector('mediaSession.metadata');
+const songName = metadata && metadata.title;
+const artistName = metadata && metadata.artist;
+const albumCoverUrl = metadata && metadata.artwork[0].src;
+
+// Update UI with song details
+document.getElementById('songName').innerText = songName || 'Unknown Song';
+document.getElementById('artistName').innerText = artistName || 'Unknown Artist';
+document.getElementById('albumCover').src = albumCoverUrl || 'default_cover.jpg';
 
 // New approach for dynamically loading song details
 // Song titles
-const songs = ['Solitude Dark Ambient Electronic', 'Drive Breakbeat', 'Better Day'];
-
-// Keep track of song
-let songIndex = 2;
-
+const songs = ['Solitude.mp3', 'Better Day.mp3', 'Drive Breakbeat.mp3'];
 // Initially load song details
-loadSong(songs[songIndex]);
-
-// Update song details
-function loadSong(song) {
-  document.getElementById('songName').innerText = song; // Update the song name in the HTML
-  document.getElementById('albumCover').src = 'images/' + song + '.jpg'; // Update the album cover image source
-}
+loadSong(songs[2]); // Load the initial song (change index as needed)
