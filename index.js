@@ -107,7 +107,7 @@ function updateProgressBar() {
     var progress = (player.seek() / player.duration()) * 100;
     progressBar.value = progress;
 
-    // Function to format time in MM:SS format
+// Function to format time in MM:SS format
 function formatTime(timeInSeconds) {
     var minutes = Math.floor(timeInSeconds / 60);
     var seconds = Math.floor(timeInSeconds % 60);
@@ -131,17 +131,17 @@ progressTimer.textContent = currentTime + " / " + duration;
 // Access metadata
 const audioElement = document.getElementById('audioPlayer');
 const metadata = audioElement && audioElement.querySelector('mediaSession.metadata');
-const songName = metadata && metadata.title;
-const artistName = metadata && metadata.artist;
-const albumCoverUrl = metadata && metadata.artwork[0].src;
+const songName = metadata && metadata.Title;
+const artistName = metadata && metadata.Artist;
+const albumCoverUrl = metadata && metadata.Artwork[0].src;
 
-// Update UI with song details
-document.getElementById('songName').innerText = songName || 'Unknown Song';
-document.getElementById('artistName').innerText = artistName || 'Unknown Artist';
-document.getElementById('albumCover').src = albumCoverUrl || 'default_cover.jpg';
+loadSongDetails("Solitude", "Luca Francini", "images/lucafrancini.png");
+loadSongDetails("Better Day", "Penguinmusic", "images/penguinmusic.png");
+loadSongDetails("Drive Breakbeat", "Rockot", "images/rockot.png");
 
-// New approach for dynamically loading song details
-// Song titles
-const songs = ['Solitude.mp3', 'Better Day.mp3', 'Drive Breakbeat.mp3'];
-// Initially load song details
-loadSong(songs[2]); // Load the initial song (change index as needed)
+// Function to load song details
+function loadSongDetails(song, artist, coverSrc) {
+    document.getElementById('songName').innerText = song;
+    document.getElementById('artistName').innerText = artist;
+    document.getElementById('albumCover').src = coverSrc;
+}
