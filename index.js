@@ -18,13 +18,13 @@ const songDetails = [
 // Function to initialize the player with the current song
 function initializePlayer() {
     player = new Howl({
-        src: ['music/' + playlist[currentIndex]], // Update the path to music files
+        src: ['music/' + playlist[currentIndex]],
         html5: true,
         onend: function() {
             next();
         }
     });
-    loadSongDetails(currentIndex); // Load details of the initial song
+    loadSongDetails(currentIndex);
 }
 
 loadSongDetails(currentIndex);
@@ -58,6 +58,7 @@ function next() {
     currentIndex = (currentIndex + 1) % playlist.length;
     stop();
     initializePlayer();
+    play();
 }
 
 // Function to play the previous song
@@ -65,6 +66,7 @@ function previous() {
     currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
     stop();
     initializePlayer();
+    play();
 }
 
 // Event listeners for the buttons
