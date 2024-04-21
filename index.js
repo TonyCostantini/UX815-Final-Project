@@ -8,6 +8,34 @@ const playlist = [
     'Drive Breakbeat.mp3'
 ];
 
+// Manually specify song details
+const songName = "Solitude";
+const artistName = "Luca Francini";
+const albumCoverUrl = "images/lucafrancini.png";
+const mp3FilePath = "music/Solitude.mp3"; // Add the file path to the MP3 file
+// Manually specify song details for Better Day
+const betterDaySongName = "Better Day";
+const betterDayArtistName = "Penguinmusic";
+const betterDayAlbumCoverUrl = "images/penguinmusic.png";
+const betterDayMp3FilePath = "music/Better Day.mp3";
+// Manually specify song details for Drive Breakbeat
+const driveBreakbeatSongName = "Drive Breakbeat";
+const driveBreakbeatArtistName = "Rockot";
+const driveBreakbeatAlbumCoverUrl = "images/rockot.png";
+const driveBreakbeatMp3FilePath = "music/Drive Breakbeat.mp3";
+// Update UI with manually specified song details
+loadSongDetails(songName, artistName, albumCoverUrl);
+// Function to initialize the player with the current song
+function initializePlayer() {
+    player = new Howl({
+        src: [mp3FilePath], // Use the MP3 file path
+        html5: true,
+        onend: function() {
+            next();
+        }
+    });
+}
+
 // Function to initialize the player with the current song
 function initializePlayer() {
     player = new Howl({
@@ -127,28 +155,6 @@ var currentTime = formatTime(player.seek());
 var duration = formatTime(player.duration());
 progressTimer.textContent = currentTime + " / " + duration;
 }
-
-// Event listener to update the song info when a new song starts playing
-player.on('play', function() {
-    // Get the metadata of the currently playing song
-    const currentSong = getCurrentSong();
-    const song = currentSong.name;
-    const artist = currentSong.artist;
-    const coverSrc = currentSong.coverSrc;
-    // Update the song information
-    loadSongDetails(song, artist, coverSrc);
-});
-
-// Access metadata
-const audioElement = document.getElementById('audioPlayer');
-const metadata = audioElement && audioElement.querySelector('mediaSession.metadata');
-const songName = metadata && metadata.Title;
-const artistName = metadata && metadata.Artist;
-const albumCoverUrl = metadata && metadata.Artwork[0].src;
-
-loadSongDetails("Solitude", "Luca Francini", "images/lucafrancini.png");
-loadSongDetails("Better Day", "Penguinmusic", "images/penguinmusic.png");
-loadSongDetails("Drive Breakbeat", "Rockot", "images/rockot.png");
 
 // Function to load song details
 function loadSongDetails(song, artist, coverSrc) {
