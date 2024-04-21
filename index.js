@@ -27,6 +27,8 @@ function initializePlayer() {
     loadSongDetails(currentIndex); // Load details of the initial song
 }
 
+loadSongDetails(currentIndex);
+
 // Function to play the current song
 function play() {
     if (!player) {
