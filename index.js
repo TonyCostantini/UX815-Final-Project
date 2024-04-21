@@ -128,6 +128,17 @@ var duration = formatTime(player.duration());
 progressTimer.textContent = currentTime + " / " + duration;
 }
 
+// Event listener to update the song info when a new song starts playing
+player.on('play', function() {
+    // Get the metadata of the currently playing song
+    const currentSong = getCurrentSong();
+    const song = currentSong.name;
+    const artist = currentSong.artist;
+    const coverSrc = currentSong.coverSrc;
+    // Update the song information
+    loadSongDetails(song, artist, coverSrc);
+});
+
 // Access metadata
 const audioElement = document.getElementById('audioPlayer');
 const metadata = audioElement && audioElement.querySelector('mediaSession.metadata');
