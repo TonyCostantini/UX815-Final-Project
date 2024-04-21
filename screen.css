@@ -18,6 +18,18 @@ nav {
     background: #E6E6E6;
 }
 
+.back {
+    position: relative;
+    bottom: 25%;
+    transform: translateY(12%);
+}
+
+.options {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 /* Index */
 
 .playlists {
@@ -27,7 +39,7 @@ nav {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
-    background: #FFFFFF;
+    background: #F6F6F6;
 }
 
 .song-tile {
@@ -38,7 +50,7 @@ nav {
     align-items: center;
     gap: 10px;
     border-radius: 10px;
-    background: #F9F9F9;
+    background: #E6E6E6;
 }
 
 .playlist-image1 {
@@ -74,7 +86,7 @@ nav {
 .playlist-info {
     display: flex;
     width: 292px;
-    padding: 180px 4px 4px 4px;
+    padding: 180px 4px 8px 4px;
     justify-content: center;
 }
 
@@ -125,6 +137,7 @@ img.options {
     flex-shrink: 0;
 }
 
+
 /* Player */
 
 .container {
@@ -154,7 +167,7 @@ img.options {
     display: flex;
     flex-direction: column;
     width: 288px;
-    padding: 8px 16px;
+    padding: 0px 16px;
     justify-content: center;
     align-items: center;
 }
@@ -175,24 +188,21 @@ progress {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 56px;
+    gap: 48px;
     padding: 16px 0;
 }
 
 #previous {
-    font-size: 36px;
     background-color: #F9F9F9;
     border: 0;
 }
 
 #play {
-    font-size: 48px;
     background-color: #F9F9F9;
     border: 0;
 }
 
 #next {
-    font-size: 36px;
     background-color: #F9F9F9;
     border: 0;
 }
@@ -205,19 +215,15 @@ progress {
 }
 
 #stop {
-    font-size: 36px;
-    background-color: #F9F9F9;
     border: 0;
-    width: 32px;
-    height: 40.56px;
+    width: 16px;
+    height: 16px;
 }
 
 #pause {
-    font-size: 36px;
-    background-color: #F9F9F9;
     border: 0;
-    width: 32px;
-    height: 40.56px;
+    width: 16px;
+    height: 16px;
 }
 
 .volume {
@@ -258,8 +264,8 @@ h5 {
 }
 
 .music-player {
-    margin-top: 8px;
-    padding-bottom: 13px;
+    margin-top: 16px;
+    padding-bottom: 23px;
     text-align: center;
 }
 
