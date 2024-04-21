@@ -189,7 +189,7 @@ progress {
     align-items: center;
     justify-content: center;
     gap: 48px;
-    padding: 16px 0;
+    padding: 21px 0;
 }
 
 #previous {
@@ -212,25 +212,21 @@ progress {
     align-items: center;
     justify-content: center;
     gap: 56px;
+    padding: 8px 0;
 }
 
 #stop {
     border: 0;
-    width: 16px;
-    height: 16px;
+    position: relative;
+    transform: translateY(6%);
+
 }
 
 #pause {
     border: 0;
-    width: 16px;
-    height: 16px;
-}
+    position: relative;
+    transform: translateY(6%);
 
-.volume {
-    width: 288px;
-    display: inline-flex;
-    padding: 24px 33px;
-    align-items: center;
 }
 
 h3 {
@@ -267,6 +263,16 @@ h5 {
     margin-top: 16px;
     padding-bottom: 23px;
     text-align: center;
+}
+
+.volumeLow {
+    position: relative;
+    transform: translateY(-16%);
+}
+
+.volumeHigh {
+    position: relative;
+    transform: translateY(-16%);
 }
 
 #volumeSlider {
