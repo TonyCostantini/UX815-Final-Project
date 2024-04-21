@@ -8,33 +8,12 @@ const playlist = [
     'Drive Breakbeat.mp3'
 ];
 
-// Manually specify song details
-const songName = "Solitude";
-const artistName = "Luca Francini";
-const albumCoverUrl = "images/lucafrancini.png";
-const mp3FilePath = "music/Solitude.mp3"; // Add the file path to the MP3 file
-// Manually specify song details for Better Day
-const betterDaySongName = "Better Day";
-const betterDayArtistName = "Penguinmusic";
-const betterDayAlbumCoverUrl = "images/penguinmusic.png";
-const betterDayMp3FilePath = "music/Better Day.mp3";
-// Manually specify song details for Drive Breakbeat
-const driveBreakbeatSongName = "Drive Breakbeat";
-const driveBreakbeatArtistName = "Rockot";
-const driveBreakbeatAlbumCoverUrl = "images/rockot.png";
-const driveBreakbeatMp3FilePath = "music/Drive Breakbeat.mp3";
-// Update UI with manually specified song details
-loadSongDetails(songName, artistName, albumCoverUrl);
-// Function to initialize the player with the current song
-function initializePlayer() {
-    player = new Howl({
-        src: [mp3FilePath], // Use the MP3 file path
-        html5: true,
-        onend: function() {
-            next();
-        }
-    });
-}
+// Define song details for each song in the playlist
+const songDetails = [
+    { song: "Solitude", artist: "Luca Francini", coverSrc: "images/lucafrancini.png" },
+    { song: "Better Day", artist: "Penguinmusic", coverSrc: "images/penguinmusic.png" },
+    { song: "Drive Breakbeat", artist: "Rockot", coverSrc: "images/rockot.png" }
+];
 
 // Function to initialize the player with the current song
 function initializePlayer() {
@@ -42,9 +21,10 @@ function initializePlayer() {
         src: ['music/' + playlist[currentIndex]], // Update the path to music files
         html5: true,
         onend: function() {
-            next(); 
+            next();
         }
     });
+    loadSongDetails(currentIndex); // Load details of the initial song
 }
 
 // Function to play the current song
@@ -76,7 +56,6 @@ function next() {
     currentIndex = (currentIndex + 1) % playlist.length;
     stop();
     initializePlayer();
-    play();
 }
 
 // Function to play the previous song
@@ -84,7 +63,6 @@ function previous() {
     currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
     stop();
     initializePlayer();
-    play();
 }
 
 // Event listeners for the buttons
@@ -93,6 +71,14 @@ document.getElementById('pause').addEventListener('click', pause);
 document.getElementById('stop').addEventListener('click', stop);
 document.getElementById('next').addEventListener('click', next);
 document.getElementById('previous').addEventListener('click', previous);
+
+// Function to load song details
+function loadSongDetails(index) {
+    const { song, artist, coverSrc } = songDetails[index];
+    document.getElementById('songName').innerText = song;
+    document.getElementById('artistName').innerText = artist;
+    document.getElementById('albumCover').src = coverSrc;
+}
 
 // Integrate music player progress bar
 let progressUpdateTimer;
@@ -154,11 +140,4 @@ setInterval(updateProgressTimer, 1000);
 var currentTime = formatTime(player.seek());
 var duration = formatTime(player.duration());
 progressTimer.textContent = currentTime + " / " + duration;
-}
-
-// Function to load song details
-function loadSongDetails(song, artist, coverSrc) {
-    document.getElementById('songName').innerText = song;
-    document.getElementById('artistName').innerText = artist;
-    document.getElementById('albumCover').src = coverSrc;
 }
